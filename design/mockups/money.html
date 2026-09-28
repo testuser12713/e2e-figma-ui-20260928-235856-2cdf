@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BusinessHandler — Money Management</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="nav" data-od-id="bottom-nav">
+    <span class="nav__brand"><span class="brand-dot"></span>BusinessHandler</span>
+    <div class="nav__items">
+      <a class="nav__item" href="index.html" data-od-id="nav-dashboard" aria-label="Dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+          <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+          <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+          <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+        </svg>
+        <span class="nav__label">Dashboard</span>
+      </a>
+      <a class="nav__item is-active" href="money.html" data-od-id="nav-money" aria-label="Money Management">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2.5" y="6" width="19" height="12" rx="2"></rect>
+          <path d="M6 10h12M12 10v4"></path>
+        </svg>
+        <span class="nav__label">Money</span>
+      </a>
+      <a class="nav__item" href="time.html" data-od-id="nav-time" aria-label="Time Management">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M12 7v5l3.5 2"></path>
+        </svg>
+        <span class="nav__label">Zeit</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="main" data-od-id="money-main">
+    <div class="container">
+      <header class="page-head" data-od-id="page-head">
+        <p class="eyebrow">Finanzen</p>
+        <h1>Money Management</h1>
+        <p>September 2026</p>
+      </header>
+
+      <section class="section" data-od-id="section-tabs">
+        <div class="segmented" role="tablist" data-od-id="segmented-money">
+          <button class="segmented__option is-active" role="tab" aria-selected="true" data-view="transactions" data-od-id="tab-transactions">Transaktionen</button>
+          <button class="segmented__option" role="tab" aria-selected="false" data-view="budgets" data-od-id="tab-budgets">Budgets</button>
+        </div>
+      </section>
+
+      <section class="section" data-od-id="section-summary" aria-label="Zusammenfassung">
+        <div class="kpi-grid">
+          <article class="card kpi" data-od-id="kpi-balance">
+            <span class="kpi__label">Kontostand</span>
+            <span class="kpi__value">6.210,50 €</span>
+            <div class="kpi__foot">
+              <span class="badge badge--success" data-od-id="badge-balance">+2.850 €</span>
+            </div>
+          </article>
+          <article class="card kpi" data-od-id="kpi-month-expenses">
+            <span class="kpi__label">Ausgaben diesen Monat</span>
+            <span class="kpi__value">1.284,20 €</span>
+            <div class="kpi__foot">
+              <span class="badge badge--warning" data-od-id="badge-month-expenses">im Plan</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Transaktionen -->
+      <section class="section" data-view-panel="transactions" data-od-id="panel-transactions" aria-label="Transaktionen">
+        <div class="section__header">
+          <div>
+            <h2 class="section__title">Transaktionen</h2>
+            <p class="section__subtitle">Auf eine Position tippen für Details</p>
+          </div>
+          <button class="btn btn--primary btn--sm" id="btn-add-tx" data-od-id="btn-add-tx">+ Neu</button>
+        </div>
+        <div class="card" data-od-id="card-tx-list">
+          <div class="list-group__label">28. September</div>
+          <button class="tx" data-od-id="tx-1" data-title="Edeka Einkauf" data-amount="−42,85 €" data-category="Lebensmittel" data-date="28.09.2026, 18:24" data-note="Wocheneinkauf">
+            <span class="tx__icon" style="background: var(--color-warning_soft);">E</span>
+            <span class="tx__body">
+              <span class="tx__title">Edeka Einkauf</span>
+              <span class="tx__meta">Lebensmittel · 18:24</span>
+            </span>
+            <span class="tx__amount is-negative">−42,85 €</span>
+          </button>
+          <button class="tx" data-od-id="tx-2" data-title="Café Kaffee & Co" data-amount="−4,50 €" data-category="Gastronomie" data-date="28.09.2026, 09:12" data-note="">
+            <span class="tx__icon" style="background: var(--color-border);">C</span>
+            <span class="tx__body">
+              <span class="tx__title">Café Kaffee &amp; Co</span>
+              <span class="tx__meta">Gastronomie · 09:12</span>
+            </span>
+            <span class="tx__amount is-negative">−4,50 €</span>
+          </button>
+          <div class="list-group__label">25. September</div>
+          <button class="tx" data-od-id="tx-3" data-title="Gehalt" data-amount="+2.850,00 €" data-category="Einkommen" data-date="25.09.2026, 08:00" data-note="Monatsgehalt">
+            <span class="tx__icon" style="background: var(--color-success_soft);">G</span>
+            <span class="tx__body">
+              <span class="tx__title">Gehalt</span>
+              <span class="tx__meta">Einkommen · 08:00</span>
+            </span>
+            <span class="tx__amount is-positive">+2.850,00 €</span>
+          </button>
+          <div class="list-group__label">24. September</div>
+          <button class="tx" data-od-id="tx-4" data-title="Netflix Abo" data-amount="−12,99 €" data-category="Abos" data-date="24.09.2026, 03:00" data-note="Monatsabo">
+            <span class="tx__icon" style="background: var(--color-border);">N</span>
+            <span class="tx__body">
+              <span class="tx__title">Netflix Abo</span>
+              <span class="tx__meta">Abos · 03:00</span>
+            </span>
+            <span class="tx__amount is-negative">−12,99 €</span>
+          </button>
+          <button class="tx" data-od-id="tx-5" data-title="Tankstelle Aral" data-amount="−68,20 €" data-category="Mobilität" data-date="24.09.2026, 12:40" data-note="">
+            <span class="tx__icon" style="background: var(--color-info);">A</span>
+            <span class="tx__body">
+              <span class="tx__title">Tankstelle Aral</span>
+              <span class="tx__meta">Mobilität · 12:40</span>
+            </span>
+            <span class="tx__amount is-negative">−68,20 €</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Budgets -->
+      <section class="section" data-view-panel="budgets" hidden data-od-id="panel-budgets" aria-label="Budgets">
+        <div class="section__header">
+          <div>
+            <h2 class="section__title">Budgets</h2>
+            <p class="section__subtitle">September 2026</p>
+          </div>
+          <button class="btn btn--primary btn--sm" data-od-id="btn-add-budget">+ Budget</button>
+        </div>
+        <div class="card" data-od-id="card-budgets">
+          <div class="progress" style="margin-bottom: var(--space-4);">
+            <div class="progress__head">
+              <span class="progress__label" style="font-size: var(--size-md); color: var(--color-fg);">Lebensmittel</span>
+              <span class="progress__value">420 € / 600 €</span>
+            </div>
+            <div class="progress__track">
+              <div class="progress__fill is-ok" style="width: 70%;"></div>
+            </div>
+          </div>
+          <div class="progress" style="margin-bottom: var(--space-4);">
+            <div class="progress__head">
+              <span class="progress__label" style="font-size: var(--size-md); color: var(--color-fg);">Mobilität</span>
+              <span class="progress__value">220 € / 250 €</span>
+            </div>
+            <div class="progress__track">
+              <div class="progress__fill is-near" style="width: 88%;"></div>
+            </div>
+          </div>
+          <div class="progress" style="margin-bottom: var(--space-4);">
+            <div class="progress__head">
+              <span class="progress__label" style="font-size: var(--size-md); color: var(--color-fg);">Freizeit</span>
+              <span class="progress__value">180 € / 150 €</span>
+            </div>
+            <div class="progress__track">
+              <div class="progress__fill is-over" style="width: 100%;"></div>
+            </div>
+          </div>
+          <div class="progress">
+            <div class="progress__head">
+              <span class="progress__label" style="font-size: var(--size-md); color: var(--color-fg);">Abos</span>
+              <span class="progress__value">65 € / 100 €</span>
+            </div>
+            <div class="progress__track">
+              <div class="progress__fill is-ok" style="width: 65%;"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Detail-Sheet -->
+  <div class="sheet-overlay" id="tx-sheet" data-od-id="tx-sheet">
+    <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="tx-sheet-title">
+      <div class="sheet__header">
+        <h3 class="sheet__title" id="tx-sheet-title">Transaktion</h3>
+        <button class="btn--icon" id="btn-sheet-close" aria-label="Schließen" data-od-id="btn-sheet-close">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+      <p class="kpi__value" id="sheet-amount" style="margin-bottom: var(--space-3);">—</p>
+      <div class="field">
+        <span class="field__label">Titel</span>
+        <input class="input" id="sheet-title" type="text" />
+      </div>
+      <div class="field">
+        <span class="field__label">Kategorie</span>
+        <input class="input" id="sheet-category" type="text" />
+      </div>
+      <div class="field">
+        <span class="field__label">Datum</span>
+        <input class="input" id="sheet-date" type="text" />
+      </div>
+      <div class="field">
+        <span class="field__label">Notiz</span>
+        <input class="input" id="sheet-note" type="text" placeholder="—" />
+      </div>
+      <div style="display: flex; gap: var(--space-2); margin-top: var(--space-3);">
+        <button class="btn btn--secondary" style="flex: 1;" id="btn-sheet-cancel" data-od-id="btn-sheet-cancel">Schließen</button>
+        <button class="btn btn--primary" style="flex: 1;" id="btn-sheet-save" data-od-id="btn-sheet-save">Speichern</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var tabs = document.querySelectorAll('.segmented__option');
+      var panels = document.querySelectorAll('[data-view-panel]');
+      var sheet = document.getElementById('tx-sheet');
+      var closeBtn = document.getElementById('btn-sheet-close');
+      var cancelBtn = document.getElementById('btn-sheet-cancel');
+
+      function setView(view) {
+        tabs.forEach(function (t) {
+          var active = t.getAttribute('data-view') === view;
+          t.classList.toggle('is-active', active);
+          t.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        panels.forEach(function (p) {
+          p.hidden = p.getAttribute('data-view-panel') !== view;
+        });
+      }
+
+      tabs.forEach(function (t) {
+        t.addEventListener('click', function () {
+          setView(t.getAttribute('data-view'));
+        });
+      });
+
+      function openSheet(tx) {
+        document.getElementById('sheet-amount').textContent = tx.getAttribute('data-amount');
+        document.getElementById('sheet-title').value = tx.getAttribute('data-title');
+        document.getElementById('sheet-category').value = tx.getAttribute('data-category');
+        document.getElementById('sheet-date').value = tx.getAttribute('data-date');
+        document.getElementById('sheet-note').value = tx.getAttribute('data-note');
+        sheet.classList.add('is-open');
+      }
+
+      function closeSheet() {
+        sheet.classList.remove('is-open');
+      }
+
+      document.querySelectorAll('.tx').forEach(function (tx) {
+        tx.addEventListener('click', function () { openSheet(tx); });
+      });
+
+      closeBtn.addEventListener('click', closeSheet);
+      cancelBtn.addEventListener('click', closeSheet);
+      sheet.addEventListener('click', function (e) {
+        if (e.target === sheet) closeSheet();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeSheet();
+      });
+    })();
+  </script>
+</body>
+</html>
