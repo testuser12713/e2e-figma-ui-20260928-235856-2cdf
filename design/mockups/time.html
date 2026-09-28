@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BusinessHandler — Time Management</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="nav" data-od-id="bottom-nav">
+    <span class="nav__brand"><span class="brand-dot"></span>BusinessHandler</span>
+    <div class="nav__items">
+      <a class="nav__item" href="index.html" data-od-id="nav-dashboard" aria-label="Dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+          <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+          <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+          <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+        </svg>
+        <span class="nav__label">Dashboard</span>
+      </a>
+      <a class="nav__item" href="money.html" data-od-id="nav-money" aria-label="Money Management">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2.5" y="6" width="19" height="12" rx="2"></rect>
+          <path d="M6 10h12M12 10v4"></path>
+        </svg>
+        <span class="nav__label">Money</span>
+      </a>
+      <a class="nav__item is-active" href="time.html" data-od-id="nav-time" aria-label="Time Management">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M12 7v5l3.5 2"></path>
+        </svg>
+        <span class="nav__label">Zeit</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="main" data-od-id="time-main">
+    <div class="container">
+      <header class="page-head" data-od-id="page-head">
+        <p class="eyebrow">Arbeitszeit</p>
+        <h1>Time Management</h1>
+        <p>Kalenderwoche 40 · 2026</p>
+      </header>
+
+      <section class="section" data-od-id="section-timer" aria-label="Laufende Erfassung">
+        <div class="card" data-od-id="card-timer">
+          <div class="timer">
+            <div>
+              <span class="timer__meta">Laufende Erfassung</span>
+              <div class="timer__readout" id="timer-readout" data-od-id="timer-readout">00:00:00</div>
+              <span class="timer__meta" id="timer-project">Projekt: Website Redesign</span>
+            </div>
+            <button class="btn btn--primary" id="btn-timer" data-od-id="btn-timer">Start</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" data-od-id="section-week" aria-label="Wochenübersicht">
+        <div class="section__header">
+          <div>
+            <h2 class="section__title">Wochenübersicht</h2>
+            <p class="section__subtitle">Stunden pro Tag</p>
+          </div>
+          <span class="badge badge--info" data-od-id="badge-week-total">Gesamt 07:25 h</span>
+        </div>
+        <div class="card" data-od-id="card-bars">
+          <div class="bars" data-od-id="bars">
+            <div class="bar-col"><div class="bar-col__bar" style="height: 0%;"></div><span class="bar-col__label">Mo</span></div>
+            <div class="bar-col"><div class="bar-col__bar" style="height: 45%;"></div><span class="bar-col__label">Di</span></div>
+            <div class="bar-col"><div class="bar-col__bar" style="height: 90%;"></div><span class="bar-col__label">Mi</span></div>
+            <div class="bar-col"><div class="bar-col__bar" style="height: 30%;"></div><span class="bar-col__label">Do</span></div>
+            <div class="bar-col"><div class="bar-col__bar" style="height: 60%;"></div><span class="bar-col__label">Fr</span></div>
+            <div class="bar-col"><div class="bar-col__bar" style="height: 0%;"></div><span class="bar-col__label">Sa</span></div>
+            <div class="bar-col"><div class="bar-col__bar" style="height: 0%;"></div><span class="bar-col__label">So</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" data-od-id="section-entries" aria-label="Erfasste Zeiten">
+        <div class="section__header">
+          <div>
+            <h2 class="section__title">Erfasste Zeiten</h2>
+            <p class="section__subtitle">Zuletzt erfasst</p>
+          </div>
+          <button class="btn btn--primary btn--sm" data-od-id="btn-add-entry">+ Zeit</button>
+        </div>
+        <div class="card" data-od-id="card-entries">
+          <button class="tx" data-od-id="entry-1">
+            <span class="tx__icon" style="background: var(--color-accent); color: #fff;">WR</span>
+            <span class="tx__body">
+              <span class="tx__title">Website Redesign</span>
+              <span class="tx__meta">Design · 28.09.2026</span>
+            </span>
+            <span class="tx__amount is-positive">03:20 h</span>
+          </button>
+          <button class="tx" data-od-id="entry-2">
+            <span class="tx__icon" style="background: var(--color-info); color: #fff;">SR</span>
+            <span class="tx__body">
+              <span class="tx__title">Sprint Review</span>
+              <span class="tx__meta">Meeting · 28.09.2026</span>
+            </span>
+            <span class="tx__amount is-positive">01:15 h</span>
+          </button>
+          <button class="tx" data-od-id="entry-3">
+            <span class="tx__icon" style="background: var(--color-warning_soft);">KO</span>
+            <span class="tx__body">
+              <span class="tx__title">Konzeption</span>
+              <span class="tx__meta">Planung · 27.09.2026</span>
+            </span>
+            <span class="tx__amount is-positive">02:05 h</span>
+          </button>
+          <button class="tx" data-od-id="entry-4">
+            <span class="tx__icon" style="background: var(--color-border);">DO</span>
+            <span class="tx__body">
+              <span class="tx__title">Dokumentation</span>
+              <span class="tx__meta">Schreiben · 26.09.2026</span>
+            </span>
+            <span class="tx__amount is-positive">00:45 h</span>
+          </button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('btn-timer');
+      var readout = document.getElementById('timer-readout');
+      var project = document.getElementById('timer-project');
+      var running = false;
+      var seconds = 0;
+      var interval = null;
+
+      function pad(n) {
+        return n < 10 ? '0' + n : String(n);
+      }
+
+      function format(total) {
+        var h = Math.floor(total / 3600);
+        var m = Math.floor((total % 3600) / 60);
+        var s = total % 60;
+        return pad(h) + ':' + pad(m) + ':' + pad(s);
+      }
+
+      function render() {
+        readout.textContent = format(seconds);
+      }
+
+      btn.addEventListener('click', function () {
+        if (running) {
+          running = false;
+          clearInterval(interval);
+          btn.textContent = 'Start';
+          btn.classList.remove('btn--danger');
+          btn.classList.add('btn--primary');
+          project.textContent = 'Projekt: Website Redesign';
+        } else {
+          running = true;
+          interval = setInterval(function () {
+            seconds += 1;
+            render();
+          }, 1000);
+          btn.textContent = 'Stop';
+          btn.classList.remove('btn--primary');
+          btn.classList.add('btn--danger');
+          project.textContent = 'Erfassung läuft …';
+        }
+      });
+
+      render();
+    })();
+  </script>
+</body>
+</html>
