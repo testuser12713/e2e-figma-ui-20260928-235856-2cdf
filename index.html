@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BusinessHandler</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="stylesheet" href="money.css" />
+  <link rel="stylesheet" href="time.css" />
+</head>
+<body>
+  <nav class="nav" id="nav" aria-label="Hauptnavigation">
+    <span class="nav__brand"><span class="brand-dot"></span>BusinessHandler</span>
+    <div class="nav__items">
+      <button type="button" class="nav__item is-active" id="nav-dashboard" aria-label="Dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+          <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+          <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+          <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+        </svg>
+        <span class="nav__label">Dashboard</span>
+      </button>
+      <button type="button" class="nav__item" id="nav-money" aria-label="Money Management">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2.5" y="6" width="19" height="12" rx="2"></rect>
+          <path d="M6 10h12M12 10v4"></path>
+        </svg>
+        <span class="nav__label">Money</span>
+      </button>
+      <button type="button" class="nav__item" id="nav-time" aria-label="Time Management">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M12 7v5l3.5 2"></path>
+        </svg>
+        <span class="nav__label">Zeit</span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="main">
+    <div class="container">
+      <section class="page is-active" id="page-dashboard" aria-label="Dashboard">
+        <header class="page-head">
+          <p class="eyebrow">Übersicht</p>
+          <h1>Dashboard</h1>
+        </header>
+      </section>
+
+      <section class="page" id="page-money" aria-label="Money Management" hidden>
+        <header class="page-head">
+          <p class="eyebrow">Finanzen</p>
+          <h1>Money Management</h1>
+        </header>
+      </section>
+
+      <section class="page" id="page-time" aria-label="Time Management" hidden>
+        <header class="page-head">
+          <p class="eyebrow">Arbeitszeit</p>
+          <h1>Time Management</h1>
+        </header>
+      </section>
+    </div>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="dashboard.js"></script>
+  <script src="money.js"></script>
+  <script src="time.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
