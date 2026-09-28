@@ -1,1 +1,223 @@
-/* Time-Management-spezifische Stile (Feature-Ticket #3) */
+/* ============================================================
+   Time Management — seitenspezifische Stile (Feature-Ticket #3)
+   Tokens aus DESIGN.md. Mobile first, responsiv.
+   ============================================================ */
+
+.time {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* ---------- Tagesübersicht (KPI) ---------- */
+
+.time__kpi {
+  padding: var(--space-3);
+}
+
+.kpi__label {
+  font-family: var(--font-label);
+  font-size: var(--size-sm);
+  line-height: 18px;
+  font-weight: 400;
+  letter-spacing: 0.38px;
+  color: var(--color-muted);
+  text-transform: uppercase;
+}
+
+.kpi__value {
+  font-family: var(--font-heading);
+  font-size: var(--size-display);
+  line-height: 28px;
+  font-weight: 700;
+  color: var(--color-fg);
+  margin-top: var(--space-1);
+}
+
+.kpi__meta {
+  font-family: var(--font-body);
+  font-size: var(--size-sm);
+  line-height: 14px;
+  font-weight: 400;
+  color: var(--color-muted);
+  margin-top: var(--space-1);
+}
+
+/* ---------- Bereichs-Header ---------- */
+
+.time__head {
+  margin-bottom: var(--space-2);
+}
+
+/* ---------- Wochenübersicht ---------- */
+
+.week-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-1);
+  height: 160px;
+  padding-top: var(--space-3);
+}
+
+.week-chart__col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  gap: var(--space-0);
+}
+
+.week-chart__value {
+  font-family: var(--font-body);
+  font-size: var(--size-xs);
+  line-height: 12px;
+  font-weight: 400;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.week-chart__track {
+  position: relative;
+  width: 100%;
+  max-width: 40px;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  border-radius: var(--radius-sm);
+  background: rgba(187, 199, 219, 0.35);
+}
+
+.week-chart__fill {
+  display: block;
+  width: 100%;
+  min-height: 4px;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent);
+}
+
+.week-chart__day {
+  font-family: var(--font-label);
+  font-size: var(--size-sm);
+  line-height: 18px;
+  font-weight: 400;
+  color: var(--color-muted);
+}
+
+/* ---------- Zeiterfassung ---------- */
+
+.entry-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.entry {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.entry:last-child {
+  border-bottom: none;
+}
+
+.entry__avatar {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-label);
+  font-size: var(--size-sm);
+  line-height: 18px;
+  font-weight: 400;
+  color: var(--color-bg);
+}
+
+.entry__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0);
+}
+
+.entry__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.entry__title {
+  font-family: var(--font-body);
+  font-size: var(--size-md);
+  line-height: 18px;
+  font-weight: 400;
+  color: var(--color-fg);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.entry__duration {
+  flex: 0 0 auto;
+  font-family: var(--font-heading);
+  font-size: var(--size-md);
+  line-height: 17px;
+  font-weight: 700;
+  color: var(--color-fg);
+}
+
+.entry__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.entry__date {
+  font-family: var(--font-body);
+  font-size: var(--size-sm);
+  line-height: 14px;
+  font-weight: 400;
+  color: var(--color-muted);
+}
+
+.time__empty {
+  font-family: var(--font-body);
+  font-size: var(--size-md);
+  line-height: 18px;
+  color: var(--color-muted);
+  padding: var(--space-2) 0;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (min-width: 768px) {
+  .time {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  .time__entries {
+    grid-column: 1 / -1;
+  }
+
+  .week-chart {
+    height: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .week-chart {
+    height: 220px;
+  }
+}
