@@ -134,14 +134,19 @@
 
       var time = data || {};
 
-      var html =
-        '<div class="time">' +
+      var existing = container.querySelector(".time");
+      if (existing) {
+        existing.parentNode.removeChild(existing);
+      }
+
+      var root = document.createElement("div");
+      root.className = "time";
+      root.innerHTML =
         renderDayOverview(time.dayOverview) +
         renderWeekOverview(time.weekOverview) +
-        renderEntries(time.entries) +
-        "</div>";
+        renderEntries(time.entries);
 
-      container.innerHTML = html;
+      container.appendChild(root);
     }
   };
 })();
