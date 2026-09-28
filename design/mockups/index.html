@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BusinessHandler — Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="nav" data-od-id="bottom-nav">
+    <span class="nav__brand"><span class="brand-dot"></span>BusinessHandler</span>
+    <div class="nav__items">
+      <a class="nav__item is-active" href="index.html" data-od-id="nav-dashboard" aria-label="Dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+          <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+          <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+          <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+        </svg>
+        <span class="nav__label">Dashboard</span>
+      </a>
+      <a class="nav__item" href="money.html" data-od-id="nav-money" aria-label="Money Management">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2.5" y="6" width="19" height="12" rx="2"></rect>
+          <path d="M6 10h12M12 10v4"></path>
+        </svg>
+        <span class="nav__label">Money</span>
+      </a>
+      <a class="nav__item" href="time.html" data-od-id="nav-time" aria-label="Time Management">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M12 7v5l3.5 2"></path>
+        </svg>
+        <span class="nav__label">Zeit</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="main" data-od-id="dashboard-main">
+    <div class="container">
+      <header class="page-head" data-od-id="page-head">
+        <p class="eyebrow">Übersicht</p>
+        <h1>Guten Morgen, Anna</h1>
+        <p>Dienstag, 29. September 2026</p>
+      </header>
+
+      <section class="section" data-od-id="section-kpis" aria-label="Kennzahlen">
+        <div class="kpi-grid">
+          <article class="card kpi" data-od-id="kpi-revenue">
+            <span class="kpi__label">Gesamtumsatz</span>
+            <span class="kpi__value">12.450 €</span>
+            <div class="kpi__foot">
+              <span class="badge badge--success" data-od-id="badge-revenue">+8,2 %</span>
+            </div>
+          </article>
+          <article class="card kpi" data-od-id="kpi-expenses">
+            <span class="kpi__label">Ausgaben</span>
+            <span class="kpi__value">4.320 €</span>
+            <div class="kpi__foot">
+              <span class="badge badge--danger" data-od-id="badge-expenses">−3,1 %</span>
+            </div>
+          </article>
+          <article class="card kpi" data-od-id="kpi-savings">
+            <span class="kpi__label">Ersparnis</span>
+            <span class="kpi__value">8.130 €</span>
+            <div class="kpi__foot">
+              <span class="badge badge--success" data-od-id="badge-savings">+12 %</span>
+            </div>
+          </article>
+          <article class="card kpi" data-od-id="kpi-hours">
+            <span class="kpi__label">Arbeitsstunden heute</span>
+            <span class="kpi__value">06:45 h</span>
+            <div class="kpi__foot">
+              <span class="badge badge--info" data-od-id="badge-hours">offen</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" data-od-id="section-budget" aria-label="Budget">
+        <div class="section__header">
+          <div>
+            <h2 class="section__title">Monatsbudget</h2>
+            <p class="section__subtitle">September 2026</p>
+          </div>
+          <a class="btn btn--secondary btn--sm" href="money.html" data-od-id="btn-budget-all">Alle anzeigen</a>
+        </div>
+        <div class="card" data-od-id="card-budget">
+          <div class="progress" style="margin-bottom: var(--space-3);">
+            <div class="progress__head">
+              <span class="progress__label">Lebensmittel</span>
+              <span class="progress__value">420 € / 600 €</span>
+            </div>
+            <div class="progress__track">
+              <div class="progress__fill is-ok" style="width: 70%;"></div>
+            </div>
+          </div>
+          <div class="progress" style="margin-bottom: var(--space-3);">
+            <div class="progress__head">
+              <span class="progress__label">Mobilität</span>
+              <span class="progress__value">220 € / 250 €</span>
+            </div>
+            <div class="progress__track">
+              <div class="progress__fill is-near" style="width: 88%;"></div>
+            </div>
+          </div>
+          <div class="progress">
+            <div class="progress__head">
+              <span class="progress__label">Freizeit</span>
+              <span class="progress__value">180 € / 150 €</span>
+            </div>
+            <div class="progress__track">
+              <div class="progress__fill is-over" style="width: 100%;"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" data-od-id="section-recent" aria-label="Letzte Transaktionen">
+        <div class="section__header">
+          <div>
+            <h2 class="section__title">Letzte Transaktionen</h2>
+            <p class="section__subtitle">Zuletzt aktualisiert vor 5 Min.</p>
+          </div>
+          <a class="btn btn--secondary btn--sm" href="money.html" data-od-id="btn-tx-all">Alle anzeigen</a>
+        </div>
+        <div class="card" data-od-id="card-recent">
+          <button class="tx" data-od-id="tx-recent-1" onclick="location.href='money.html'">
+            <span class="tx__icon" style="background: var(--color-warning_soft);">E</span>
+            <span class="tx__body">
+              <span class="tx__title">Edeka Einkauf</span>
+              <span class="tx__meta">Lebensmittel · 28. Sep 2026</span>
+            </span>
+            <span class="tx__amount is-negative">−42,85 €</span>
+          </button>
+          <button class="tx" data-od-id="tx-recent-2" onclick="location.href='money.html'">
+            <span class="tx__icon" style="background: var(--color-success_soft);">G</span>
+            <span class="tx__body">
+              <span class="tx__title">Gehalt</span>
+              <span class="tx__meta">Einkommen · 25. Sep 2026</span>
+            </span>
+            <span class="tx__amount is-positive">+2.850,00 €</span>
+          </button>
+          <button class="tx" data-od-id="tx-recent-3" onclick="location.href='money.html'">
+            <span class="tx__icon" style="background: var(--color-border);">N</span>
+            <span class="tx__body">
+              <span class="tx__title">Netflix Abo</span>
+              <span class="tx__meta">Abos · 24. Sep 2026</span>
+            </span>
+            <span class="tx__amount is-negative">−12,99 €</span>
+          </button>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
